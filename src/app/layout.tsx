@@ -29,9 +29,9 @@ export default function RootLayout({
       >
         <header className="bg-white shadow">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-            <div className="text-xl font-bold text-gray-800">
+            <a href="/" className="text-xl font-bold text-gray-800">
               AquaLuxeHotel
-            </div>
+            </a>
             <nav className="space-x-4">
               <a href="/home" className="text-gray-600 hover:text-gray-900">
                 Home
