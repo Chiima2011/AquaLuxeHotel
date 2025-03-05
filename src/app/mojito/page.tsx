@@ -17,7 +17,7 @@ const listMenuMojito = [
 
 function MojitotPage() {
   return (
-    <div className="relative min-h-screen screen w-[100%] bg-gray-100 p-8">
+    <div className="mt-[50px] relative min-h-screen screen w-[100%] bg-gray-100 p-8">
       <h1 className="mb-6 text-3xl font-bold text-center text-gray-600">Mojito Menu</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
         {listMenuMojito.map((item) => (

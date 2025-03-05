@@ -2,22 +2,21 @@ import React from "react";
 
 function ImportantPage() {
   return (
-    <div className="min-h-screen screen w-[100%] bg-gray-50 p-6 flex justify-center items-start">
-      <div className="max-w-[100%] w-full bg-white p-6 rounded-lg shadow-md justify-center items-center flex flex-col">
-        <div className="inline-flex items-center  px-4 py-2 bg-amber-800 rounded-full text-white font-semibold mb-6">
-          <span className="text-xl">📞</span>
-          <span className="ml-2">เบอร์โทรสำคัญภายในโรงแรม</span>
+    <div className="pt-[150px] min-h-screen w-full bg-[#F2B28C] p-6 flex justify-center items-start">
+      <div className="max-w-2xl w-full bg-white p-8 rounded-xl shadow-lg flex flex-col items-center">
+        {/* หัวข้อ */}
+        <div className="inline-flex items-center px-5 py-3 bg-amber-700 rounded-full text-white font-semibold mb-6 shadow-md">
+          <span className="text-2xl">📞</span>
+          <span className="ml-3 text-lg">เบอร์โทรสำคัญภายในโรงแรม</span>
         </div>
 
         {/* รายการข้อมูล */}
-        <ul className="space-y-5 text-gray-700 leading-relaxed">
+        <ul className="space-y-6 text-gray-700 leading-relaxed w-full">
           {/* แผนกต้อนรับ */}
           <li className="flex items-start">
-            {/* สัญลักษณ์ Bullet */}
-            <span className="mr-2 text-blue-500 text-lg">♦</span>
-            {/* ข้อความ */}
+            <span className="mr-3 text-blue-500 text-lg">♦</span>
             <div>
-              <p className="font-semibold">แผนกต้อนรับ (Front Desk): กด 0</p>
+              <p className="font-semibold text-lg">แผนกต้อนรับ (Front Desk): กด 0</p>
               <p className="text-sm text-gray-500">
                 For general inquiries, check-in, and check-out.
               </p>
@@ -26,9 +25,9 @@ function ImportantPage() {
 
           {/* รูมเซอร์วิส */}
           <li className="flex items-start">
-            <span className="mr-2 text-pink-500 text-lg">★</span>
+            <span className="mr-3 text-pink-500 text-lg">★</span>
             <div>
-              <p className="font-semibold">
+              <p className="font-semibold text-lg">
                 บริการรูมเซอร์วิส (Room Service): กด 1
               </p>
               <p className="text-sm text-gray-500">
@@ -39,9 +38,9 @@ function ImportantPage() {
 
           {/* แม่บ้านทำความสะอาด */}
           <li className="flex items-start">
-            <span className="mr-2 text-red-500 text-lg">♥</span>
+            <span className="mr-3 text-red-500 text-lg">♥</span>
             <div>
-              <p className="font-semibold">
+              <p className="font-semibold text-lg">
                 แม่บ้านทำความสะอาด (Housekeeping): กด 2
               </p>
               <p className="text-sm text-gray-500">
@@ -52,9 +51,9 @@ function ImportantPage() {
 
           {/* โรงพยาบาลใกล้เคียง */}
           <li className="flex items-start">
-            <span className="mr-2 text-green-500 text-lg">♦</span>
+            <span className="mr-3 text-green-500 text-lg">♦</span>
             <div>
-              <p className="font-semibold">
+              <p className="font-semibold text-lg">
                 โรงพยาบาลใกล้เคียง: โรงพยาบาลกระบี่ (Krabi Hospital)
               </p>
               <p className="text-sm text-gray-500">
@@ -67,9 +66,9 @@ function ImportantPage() {
 
           {/* สถานีตำรวจ */}
           <li className="flex items-start">
-            <span className="mr-2 text-rose-500 text-lg">★</span>
+            <span className="mr-3 text-rose-500 text-lg">★</span>
             <div>
-              <p className="font-semibold">
+              <p className="font-semibold text-lg">
                 สถานีตำรวจ: อ่าวนาง (Ao Nang Police Station)
               </p>
               <p className="text-sm text-gray-500">

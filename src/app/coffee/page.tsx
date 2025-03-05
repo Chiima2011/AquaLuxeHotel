@@ -45,7 +45,7 @@ const dessertsMenu = [
 
 function CoffeePage() {
   return (
-    <div className="min-h-screen w-full bg-gradient-to-b from-orange-100 to-orange-200 p-8">
+    <div className="mt-[50px] min-h-screen w-full bg-gradient-to-b from-orange-100 to-orange-200 p-8">
       <h1 className="mb-8 text-center text-3xl font-bold text-gray-700">
         Menu
       </h1>
