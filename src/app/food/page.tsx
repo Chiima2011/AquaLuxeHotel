@@ -28,7 +28,7 @@ const listMenuFood = [
 
 function FoodPage() {
   return (
-    <div className="relative min-h-screen screen w-[100%] bg-[#fffbe8] p-8">
+    <div className="mt-[50px] relative min-h-screen screen w-[100%] bg-[#fffbe8] p-8">
       <h1 className="mb-10 text-3xl font-bold text-center text-gray-800">
         เมนูแนะนำร้านอาหาร
       </h1>
