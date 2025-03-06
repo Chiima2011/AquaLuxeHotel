@@ -30,14 +30,14 @@ export default function RootLayout({
       >
         <header className="fixed top-0 left-0 w-full bg-[#F2B28C] shadow-lg rounded-bl-2xl rounded-br-2xl z-50">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-            <Link href="/" className="text-xl font-bold text-gray-800">
+            <Link href="/" className="text-xl font-bold text-white">
               AquaLuxeHotel
             </Link>
             <nav className="space-x-4">
-              <Link href="/home" className="text-gray-600 hover:text-gray-900">
+              <Link href="/home" className="text-white ">
                 Home
               </Link>
-              <Link href="/important" className="text-gray-600 hover:text-gray-900">
+              <Link href="/important" className="text-white ">
                 Contact
               </Link>
             </nav>

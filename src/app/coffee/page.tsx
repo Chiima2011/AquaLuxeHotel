@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React from "react";
 
 // ข้อมูล Coffee
@@ -45,63 +46,74 @@ const dessertsMenu = [
 
 function CoffeePage() {
   return (
-    <div className="mt-[50px] min-h-screen w-full bg-gradient-to-b from-orange-100 to-orange-200 p-8">
-      <h1 className="mb-8 text-center text-3xl font-bold text-gray-700">
-        Menu
-      </h1>
-      <div className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* กล่อง Coffee */}
-        <div className="bg-[#6B4E3D] text-white p-6 rounded shadow">
-          <h2 className="text-lg font-bold mb-4">COFFEE</h2>
-          <ul className="space-y-2">
-            {coffeeMenu.map((item, idx) => (
-              <li key={idx} className="flex justify-between">
-                <span>{item.name}</span>
-                <span>{item.price}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+    <div className="relative min-h-screen w-full p-8">
+      <div className="absolute inset-0 -z-10">
+        <Image 
+          src="/images/bgCoffee.png"
+          alt="Background"
+          layout="fill"
+          objectFit="fill"
+          quality={100}
+          priority
+        />
+      </div>
+      <div className="mt-[45px]">
+        <h1 className="mb-8 text-center text-3xl font-bold text-white">
+          Menu
+        </h1>
+        <div className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* กล่อง Coffee */}
+          <div className="bg-[#6B4E3D] text-white p-6 rounded shadow">
+            <h2 className="text-lg font-bold mb-4">COFFEE</h2>
+            <ul className="space-y-2">
+              {coffeeMenu.map((item, idx) => (
+                <li key={idx} className="flex justify-between">
+                  <span>{item.name}</span>
+                  <span>{item.price}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        {/* กล่อง Burger */}
-        <div className="bg-[#6B4E3D] text-white p-6 rounded shadow">
-          <h2 className="text-lg font-bold mb-4">BURGER</h2>
-          <ul className="space-y-2">
-            {burgerMenu.map((item, idx) => (
-              <li key={idx} className="flex justify-between">
-                <span>{item.name}</span>
-                <span>{item.price}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+          {/* กล่อง Burger */}
+          <div className="bg-[#6B4E3D] text-white p-6 rounded shadow">
+            <h2 className="text-lg font-bold mb-4">BURGER</h2>
+            <ul className="space-y-2">
+              {burgerMenu.map((item, idx) => (
+                <li key={idx} className="flex justify-between">
+                  <span>{item.name}</span>
+                  <span>{item.price}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        {/* กล่อง ICE CREAM */}
-        <div className="bg-[#6B4E3D] text-white p-6 rounded shadow">
-          <h2 className="text-lg font-bold mb-4">ICE CREAM</h2>
-          <ul className="space-y-2">
-            {iceCreamMenu.map((item, idx) => (
-              <li key={idx} className="flex justify-between">
-                <span>{item.name}</span>
-                <span>{item.price}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+          {/* กล่อง ICE CREAM */}
+          <div className="bg-[#6B4E3D] text-white p-6 rounded shadow">
+            <h2 className="text-lg font-bold mb-4">ICE CREAM</h2>
+            <ul className="space-y-2">
+              {iceCreamMenu.map((item, idx) => (
+                <li key={idx} className="flex justify-between">
+                  <span>{item.name}</span>
+                  <span>{item.price}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        {/* กล่อง DESSERTS */}
-        <div className="bg-[#6B4E3D] text-white p-6 rounded shadow">
-          <h2 className="text-lg font-bold mb-4">DESSERTS</h2>
-          <ul className="space-y-2">
-            {dessertsMenu.map((item, idx) => (
-              <li key={idx} className="flex justify-between">
-                <span>{item.name}</span>
-                <span>{item.price}</span>
-              </li>
-            ))}
-          </ul>
+          {/* กล่อง DESSERTS */}
+          <div className="bg-[#6B4E3D] text-white p-6 rounded shadow">
+            <h2 className="text-lg font-bold mb-4">DESSERTS</h2>
+            <ul className="space-y-2">
+              {dessertsMenu.map((item, idx) => (
+                <li key={idx} className="flex justify-between">
+                  <span>{item.name}</span>
+                  <span>{item.price}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-
       </div>
     </div>
   );

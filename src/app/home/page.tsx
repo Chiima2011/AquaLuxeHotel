@@ -15,25 +15,37 @@ const listMenu = [
 
 function Homepage() {
   return (
-    <div className="mt-[50px] relative min-h-screen w-full bg-gradient-to-b from-[#F6DED8] to-[#F2B28C] p-8">
-      <h1 className="mb-4 text-3xl font-bold text-center text-gray-600">Menu</h1>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {listMenu.map((item) => (
-          <Link key={item.id} href={item.path}>
-            <div className="bg-white rounded-lg shadow hover:shadow-md transition-shadow cursor-pointer overflow-hidden">
-              <div className="w-full aspect-square relative">
-                <Image
-                  src={item.imagePath || "/images/placeholder.jpg"}
-                  alt={item.name}
-                  width={300}
-                  height={300}
-                  className="w-full h-full object-cover rounded-t-lg"
-                />
+    <div className="relative min-h-screen w-full p-8">
+      <div className="absolute inset-0 -z-10">
+        <Image 
+          src="/images/bgMunu.png"
+          alt="Background"
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+          priority
+        />
+      </div>
+      <div className="mt-[40px]">
+        <h1 className="mb-4 text-3xl font-bold text-center text-white">Menu</h1>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {listMenu.map((item) => (
+            <Link key={item.id} href={item.path}>
+              <div className="bg-white rounded-lg shadow hover:shadow-md transition-shadow cursor-pointer overflow-hidden">
+                <div className="w-full aspect-square relative">
+                  <Image
+                    src={item.imagePath || "/images/placeholder.jpg"}
+                    alt={item.name}
+                    width={300}
+                    height={300}
+                    className="w-full h-full object-cover rounded-t-lg"
+                  />
+                </div>
+                <div className="p-4 text-center font-semibold text-gray-700">{item.name}</div>
               </div>
-              <div className="p-4 text-center font-semibold text-gray-700">{item.name}</div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );
