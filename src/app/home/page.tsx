@@ -58,7 +58,7 @@ function Homepage() {
                     className="w-full h-full object-cover rounded-t-lg"
                   />
                 </div>
-                <div className="p-4 text-center font-semibold text-gray-700">{item.name}</div>
+                <div className="py-4 p-0 text-center font-semibold text-gray-700">{item.name}</div>
               </div>
             </Link>
           ))}
