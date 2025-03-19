@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
 const listMenuMojito = [
@@ -16,11 +16,28 @@ const listMenuMojito = [
 ];
 
 function MojitotPage() {
+  const [bgImage, setBgImage] = useState("/images/bgMojito.png");
+      
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 640) {
+        setBgImage("/images/bgMbMojito.png");
+      } else {
+        setBgImage("/images/bgMojito.png");
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <div className="relative min-h-screen w-full p-8">
       <div className="absolute inset-0 -z-10">
         <Image 
-          src="/images/bgMojito.png"
+          src={bgImage}
           alt="Background"
           layout="fill"
           objectFit="fill"

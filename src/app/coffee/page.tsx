@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // ข้อมูล Coffee
 const coffeeMenu = [
@@ -45,11 +45,28 @@ const dessertsMenu = [
 ];
 
 function CoffeePage() {
+  const [bgImage, setBgImage] = useState("/images/bgCoffee.png");
+    
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 640) {
+        setBgImage("/images/bgMbCoffee.png");
+      } else {
+        setBgImage("/images/bgCoffee.png");
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <div className="relative min-h-screen w-full p-8">
       <div className="absolute inset-0 -z-10">
         <Image 
-          src="/images/bgCoffee.png"
+          src={bgImage}
           alt="Background"
           layout="fill"
           objectFit="fill"

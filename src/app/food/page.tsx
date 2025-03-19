@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+// import React, { useEffect, useState } from "react";
 // import Image from "next/image";
 
 // const listMenuFood = [
@@ -52,6 +52,23 @@ const drinksMenu = [
   { name: "Smoothie", price: 199 },
 ];
 function FoodPage() {
+  // const [bgImage, setBgImage] = useState("/images/bgFood.png");
+      
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     if (window.innerWidth <= 640) {
+  //       setBgImage("/images/bgMbFood.png");
+  //     } else {
+  //       setBgImage("/images/bgFood.png");
+  //     }
+  //   };
+  //   handleResize();
+  //   window.addEventListener("resize", handleResize);
+    
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, []);
   return (
     <div className="mt-[50px] relative min-h-screen w-[100%] bg-gradient-to-b from-yellow-100 to-orange-300 p-8">
       <h1 className="mb-3 text-3xl font-bold text-center text-gray-800">

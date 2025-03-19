@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
@@ -11,11 +11,28 @@ function PromotionsPage() {
     { id: 3, src: "/images/Pro3.png", alt: "Pomotion Image 3" },
   ];
 
+  const [bgImage, setBgImage] = useState("/images/bgPromotion.png");
+      
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 640) {
+        setBgImage("/images/bgMbPromotion.png");
+      } else {
+        setBgImage("/images/bgPromotion.png");
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <div className="relative min-h-screen w-full p-8 flex flex-col items-center py-8">
       <div className="absolute inset-0 -z-10">
         <Image 
-          src="/images/bgPromotion.png"
+          src={bgImage}
           alt="Background"
           layout="fill"
           objectFit="fill"

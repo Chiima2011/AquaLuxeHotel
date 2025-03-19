@@ -1,12 +1,31 @@
+'use client';
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 function ImportantPage() {
+  const [bgImage, setBgImage] = useState("/images/bgImportant.png");
+  
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 640) {
+        setBgImage("/images/bgMbImportant.png");
+      } else {
+        setBgImage("/images/bgImportant.png");
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div className="relative min-h-screen w-full p-8 ">
       <div className="absolute inset-0 -z-10">
         <Image 
-          src="/images/bgImportant.png"
+          src={bgImage}
           alt="Background"
           layout="fill"
           objectFit="cover"

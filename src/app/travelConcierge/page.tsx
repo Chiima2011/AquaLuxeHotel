@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
@@ -9,12 +9,28 @@ function TravelConciergePage() {
     { id: 1, src: "/images/Travel1.png", alt: "TravelConcierge Image 1" },
     { id: 2, src: "/images/Travel2.png", alt: "TravelConcierge Image 2" },
   ];
-
+  const [bgImage, setBgImage] = useState("/images/bgTravel.png");
+      
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 640) {
+        setBgImage("/images/bgMbTravel.png");
+      } else {
+        setBgImage("/images/bgTravel.png");
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <div className="relative min-h-screen w-full p-8 flex flex-col items-center py-8">
       <div className="absolute inset-0 -z-10">
         <Image 
-          src="/images/bgTravel.png"
+          src={bgImage}
           alt="Background"
           layout="fill"
           objectFit="fill"

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
@@ -11,12 +11,28 @@ function SpaPage() {
     { id: 3, src: "/images/Spa3.png", alt: "Spa Image 3" },
     { id: 4, src: "/images/Spa4.png", alt: "Spa Image 4" },
   ];
-
+  const [bgImage, setBgImage] = useState("/images/bgSpa.png");
+        
+    useEffect(() => {
+      const handleResize = () => {
+        if (window.innerWidth <= 640) {
+          setBgImage("/images/bgMbSpa.png");
+        } else {
+          setBgImage("/images/bgSpa.png");
+        }
+      };
+      handleResize();
+      window.addEventListener("resize", handleResize);
+      
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }, []);
   return (
     <div className="relative min-h-screen w-full p-8 flex flex-col items-center py-8">
       <div className="absolute inset-0 -z-10">
         <Image 
-          src="/images/bgSpa.png"
+          src={ bgImage }
           alt="Background"
           layout="fill"
           objectFit="fill"
@@ -41,7 +57,8 @@ function SpaPage() {
           >
             {spaSlides.map((slide) => (
               <SwiperSlide key={slide.id}>
-                <div className="relative w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px]">
+                {/* <div className="relative w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px]"> */}
+                <div className="relative w-full h-[400px]">
                   <Image
                     src={slide.src}
                     alt={slide.alt}

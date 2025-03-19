@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -14,11 +14,28 @@ const listMenu = [
 ];
 
 function Homepage() {
+  const [bgImage, setBgImage] = useState("/images/bgMunu.png");
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 640) {
+        setBgImage("/images/bgMbMenu.png");
+      } else {
+        setBgImage("/images/bgMenu.png");
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <div className="relative min-h-screen w-full p-8">
       <div className="absolute inset-0 -z-10">
         <Image 
-          src="/images/bgMunu.png"
+          src={bgImage}
           alt="Background"
           layout="fill"
           objectFit="cover"
